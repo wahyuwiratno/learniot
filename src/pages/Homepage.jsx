@@ -1,19 +1,17 @@
 import { useEffect } from 'react';
-import { Container, Row, Col, Button, Accordion } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { kelasTerbaru, dataSwiper, faq } from '../data/index';
+import { kelasTerbaru, dataSwiper } from '../data/index.js';
 import HeroImage from '../assets/img/hero-image.png';
 
-// Import Komponen Footer
+import FaqComponent from '../components/FaqComponents.jsx';
 import FooterComponent from '../components/FooterComponents.jsx';
 
-// Import Swiper components & styles
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-// Import AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -21,11 +19,7 @@ const Homepage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false,
-      mirror: true,
-    });
+    AOS.init({ duration: 1000, once: false, mirror: true });
     AOS.refresh();
   }, []);
 
@@ -65,7 +59,7 @@ const Homepage = () => {
                 <div className="card-kelas-box bg-white p-3 rounded-4 shadow-sm" data-aos="fade-up" data-aos-delay={kelas.delay ? parseInt(kelas.delay) : 0}>
                   <img src={kelas.image} alt={kelas.title} className="w-100 mb-3 rounded-top-4" />
                   <div className="star mb-2 px-2">
-                    <i className={kelas.star1}></i><i className={kelas.star2}></i><i className={kelas.star3}></i><i className={kelas.star4}></i><i className={kelas.star5}></i>
+                    <i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i>
                   </div>
                   <h5 className="mb-4 px-2 fw-bold">{kelas.title}</h5>
                   <div className="d-flex flex-column flex-xl-row justify-content-between align-items-center px-2 pb-2 gap-3">
@@ -128,33 +122,7 @@ const Homepage = () => {
         </Container>
       </section>
 
-      {/* SECTION 4: FAQ */}
-      <section className="faq py-5">
-        <Container>
-          <Row>
-            <Col data-aos="fade-up">
-              <h1 className="text-center fw-bold">Pertanyaan yang Sering Diajukan</h1>
-              <p className="text-center">Segala hal yang perlu Anda ketahui tentang LearnIOT.</p>
-            </Col>
-          </Row>
-          <Row className="mt-5 g-4">
-            {faq.map((data) => (
-              <Col key={data.id} lg={6} data-aos="fade-up" data-aos-delay={data.id * 100}>
-                <Accordion className="shadow-sm">
-                  <Accordion.Item eventKey={data.eventKey.toString()}>
-                    <Accordion.Header className="fw-bold">{data.title}</Accordion.Header>
-                    <Accordion.Body className="text-muted">
-                      {data.desc}
-                    </Accordion.Body>
-                  </Accordion.Item>
-                </Accordion>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
-
-      {/* FOOTER COMPONENT */}
+      <FaqComponent />
       <FooterComponent />
     </div>
   );

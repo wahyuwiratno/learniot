@@ -290,6 +290,36 @@ header {
 
 /* --- 9. Responsive Adjustments (Pixel 6 Focus) --- */
 @media (max-width: 991.98px) {
+    /* Perbaikan Navbar Mobile: Memberikan latar solid agar tidak overlap */
+    .navbar {
+      background-color: #ffffff !important; 
+      transition: 0.3s;
+    }
+
+    .navbar-collapse {
+      background-color: #ffffff; 
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(33, 54, 169, 0.1);
+    }
+
+    .navbar .nav-link {
+      padding: 10px 0;
+      border-bottom: 1px solid #f1f1f1;
+    }
+
+    .navbar .nav-link:last-child {
+      border-bottom: none;
+    }
+
+    .navbar .nav-link .active {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+
     header {
         height: auto;
         min-height: auto;
@@ -318,6 +348,11 @@ header {
 }
 
 @media (max-width: 575.98px) {
+    /* Memberikan jarak aman konten dari navbar fixed */
+    .all-kelas, .all-testimonial, .syarat-keten-page section {
+        padding-top: 100px !important;
+    }
+
     /* Tombol Full Width di HP */
     .homepage .btn-primary, 
     .homepage .btn-outline-primary,
