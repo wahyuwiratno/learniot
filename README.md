@@ -31,7 +31,7 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek ini di mesin lokal Anda:
     ```
 2.  **Masuk ke Direktori Proyek**
     ```bash
-    cd portfolio-pt2
+    cd (direktori-proyek)
     ```
 3.  **Instal Dependensi**
     ```bash
