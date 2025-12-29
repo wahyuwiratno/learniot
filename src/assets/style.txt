@@ -1,0 +1,35 @@
+:root {
+  --primary-color: #f6f8fd;
+  --secondary-color: #dc3545;
+  --color-text: #231942;
+  --navbar-color: #ffffff;
+  --navbar-color-text: #000000;
+}
+
+
+header {
+  background: #adffda; /* fallback */
+  background: -webkit-linear-gradient(
+    to right,
+    #adffda 0%,
+    #9fe8ee 50%,
+    #7ec7ff 100%
+  );
+  background: linear-gradient(
+    to right,
+    #adffda 0%,
+    #9fe8ee 50%,
+    #7ec7ff 100%
+  );
+
+  /* soft glow effect */
+  box-shadow:
+    0 0 12px rgba(173, 255, 218, 0.45),
+    0 0 28px rgba(126, 199, 255, 0.35);
+}
+
+header {
+  background: #adffda; /* fallback */
+  background: -webkit-linear-gradient(to right, #adffda, #7ec7ff); /* Chrome, Safari lama */
+  background: linear-gradient(to right, #adffda, #7ec7ff); /* Standar modern */
+}

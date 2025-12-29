@@ -1,0 +1,353 @@
+/* --- 1. Global Styles & Variables --- */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #f6f8fd;
+  --secondary-color: #2136a9;
+  --color-text: #231942;
+  --navbar-color: #ffffff;
+  --navbar-color-text: #000000;
+}
+
+body {
+    overflow-x: hidden;
+    color: var(--color-text);
+}
+
+/* --- 2. Navbar Styles --- */
+.navbar {
+  position: fixed;
+  padding: 15px 0;
+  width: 100%;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  background-color: transparent;
+}
+
+.navbar.color-active {
+  background-color: var(--navbar-color);
+  padding: 18px 0;
+  border-bottom: 2px solid rgba(33, 54, 169, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.navbar .nav-link a {
+  padding: 5px 15px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--navbar-color-text);
+  transition: 0.3s;
+}
+
+.navbar .nav-link a:hover {
+  color: var(--secondary-color);
+}
+
+/* Menu Aktif (Kotak Biru Rounded) */
+.navbar .nav-link .active {
+  background-color: var(--secondary-color) !important;
+  color: white !important;
+  font-weight: 600;
+  padding: 8px 18px !important; 
+  border-radius: 8px;
+}
+
+.navbar-brand {
+  color: var(--navbar-color-text);
+  transition: 0.3s;
+}
+
+/* --- 3. Buttons Style --- */
+
+/* Tombol Global (Hero, Card, dll) - Solid Style */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    color: white;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 50px;
+}
+
+.btn-primary:hover {
+    background-color: #1a2b8a;
+    border-color: #1a2b8a;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 54, 169, 0.3);
+}
+
+/* KHUSUS Tombol di Navbar (Join With Us) - Outline Style */
+.navbar .btn-primary {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    font-weight: 500;
+    padding: 8px 20px;
+}
+
+.navbar .btn-primary:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: none;
+    box-shadow: 0 0 10px rgba(33, 54, 169, 0.2);
+}
+
+/* --- 4. Header / Hero Section --- */
+header {
+  background: linear-gradient(to right, #adffda 0%, #9fe8ee 50%, #7ec7ff 100%);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.homepage header h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem); 
+  line-height: 1.1;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.homepage header p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--color-text);
+  margin-bottom: 35px;
+  line-height: 1.6;
+  max-width: 500px;
+  opacity: 0.85;
+}
+
+.homepage header img {
+  filter: drop-shadow(0 20px 30px rgba(33, 54, 169, 0.2));
+  animation: float 4s ease-in-out infinite;
+  max-height: 500px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.homepage .btn-outline-primary {
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.homepage .btn-outline-primary:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* --- 5. Section Kelas & Cards --- */
+.kelas {
+  background-color: #f8f9fa;
+  border-radius: 50px 50px 0 0; 
+  margin-top: -50px; 
+  position: relative;
+  z-index: 10;
+  padding: 80px 0;
+}
+
+.kelas h1 {
+  color: var(--secondary-color);
+}
+
+.card-kelas-box {
+  background-color: white;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 1rem;
+}
+
+.card-kelas-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(33, 54, 169, 0.1) !important;
+}
+
+.card-kelas-box img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-kelas-box .star i {
+  color: #ffc107;
+  margin-right: 2px;
+}
+
+.card-kelas-box h5 {
+  color: var(--color-text);
+  min-height: 50px;
+}
+
+/* --- 6. Section Testimonial --- */
+.testimonial {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.testimonial-card {
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: 0.3s;
+  cursor: grab;
+  margin-bottom: 50px;
+}
+
+.testimonial-card .desc {
+  font-style: italic;
+  color: #555;
+  line-height: 1.8;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--secondary-color) !important;
+  width: 25px !important;
+  border-radius: 5px !important;
+}
+
+/* --- 7. Section FAQ --- */
+.faq {
+    background-color: #f8f9fa;
+    padding: 80px 0 100px 0 !important;
+}
+
+.faq h1 {
+    color: var(--secondary-color);
+}
+
+.faq .accordion-button:not(.collapsed) {
+    background-color: var(--secondary-color);
+    color: white;
+    box-shadow: none;
+}
+
+.faq .accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+
+.faq .accordion-item {
+    border: none;
+    border-radius: 12px !important;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+/* --- 8. Footer Minimalist Style --- */
+.footer-section {
+    background-color: white;
+    color: var(--color-text);
+}
+
+.footer-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #666;
+    margin-top: 15px;
+    max-width: 400px;
+}
+
+.footer-link {
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--secondary-color) !important;
+    padding-left: 8px;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #adb5bd;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+/* --- 9. Responsive Adjustments (Pixel 6 Focus) --- */
+@media (max-width: 991.98px) {
+    header {
+        height: auto;
+        min-height: auto;
+        padding: 120px 0 80px 0;
+    }
+
+    .homepage header img {
+        max-height: 300px;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-desc {
+        margin: 15px auto;
+    }
+
+    .footer-section .d-flex.align-items-center {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    /* Tombol Full Width di HP */
+    .homepage .btn-primary, 
+    .homepage .btn-outline-primary,
+    .card-kelas-box .btn,
+    .navbar .btn-primary {
+        width: 100%; 
+        padding: 12px 0 !important;
+    }
+
+    .navbar .btn-primary {
+        margin-top: 15px;
+    }
+
+    .card-kelas-box .d-flex {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .testimonial-card {
+        padding: 20px !important;
+    }
+
+    .faq .accordion-header button {
+        font-size: 0.95rem;
+        padding: 15px;
+    }
+
+    .footer-section .col-6 {
+        text-align: left;
+        margin-top: 25px;
+    }
+}
